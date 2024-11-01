@@ -4,3 +4,6 @@ numpy
 statsmodels
 scikit-learn
 matplotlib
+jsonify
+flask
+sklearn
