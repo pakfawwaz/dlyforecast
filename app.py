@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
-from test_api import forecast  # Import the forecast function
+from test_api import forecast
+from Peso import forecast_peso
+from Yen import forecast_yen  # Import the forecast function
 import os
 
 app = Flask(__name__)
@@ -8,6 +10,18 @@ app = Flask(__name__)
 def forecast_route():
     # Call the forecast function and return its response as JSON
     result = forecast()
+    return result
+
+@app.route('/forecast_ph', methods=['GET'])
+def forecast_route():
+    # Call the forecast function and return its response as JSON
+    result = forecast_peso()
+    return result
+
+@app.route('/forecast_jp', methods=['GET'])
+def forecast_route():
+    # Call the forecast function and return its response as JSON
+    result = forecast_yen()
     return result
 
 if __name__ == '__main__':
