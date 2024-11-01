@@ -8,11 +8,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-# Initialize the Flask app
-app = Flask(_name_)
 
-# Define the forecasting function as you would in the Flask app
-@app.route('/forecast', methods=['GET'])
 def forecast():
     # Download PHP/USD data from Yahoo Finance (extended historical data)
     data = yf.download('PHPUSD=X', start='2020-01-01', end='2024-01-01', interval='1mo')
@@ -66,8 +62,3 @@ def forecast():
         'forecast': response_data
     })
 
-# Test the forecast function inside the application context
-with app.app_context():
-    # Call the forecast function and capture the response for testing
-    response = forecast()
-    print(response.get_json())  # Display the JSON output
