@@ -13,13 +13,13 @@ def forecast_route():
     return result
 
 @app.route('/forecast_ph', methods=['GET'])
-def forecast_route():
+def forecast_ph():
     # Call the forecast function and return its response as JSON
     result = forecast_peso()
     return result
 
 @app.route('/forecast_jp', methods=['GET'])
-def forecast_route():
+def forecast_jp():
     # Call the forecast function and return its response as JSON
     result = forecast_yen()
     return result
