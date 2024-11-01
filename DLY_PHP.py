@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings("ignore")  # Suppress warnings for cleaner output
 
 # Download PHP/USD data from Yahoo Finance (extended historical data)
-data = yf.download('PHPUSD=X', start='2020-01-01', end='2024-09-01', interval='1mo')
+data = yf.download('IDRPHP=X', start='2020-01-01', end='2024-09-01', interval='1mo')
 data = data['Close'].dropna()  # Use only the 'Close' column and drop any NaN values
 
 # Define the range of parameters for p, d, q
