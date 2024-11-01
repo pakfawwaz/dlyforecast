@@ -8,7 +8,7 @@ app = Flask(__name__)
 def forecast_route():
     # Call the forecast function and return its response as JSON
     result = forecast()
-    return jsonify(result)
+    return result
 
 if __name__ == '__main__':
     port =int(os.environ.get('PORT', 5000))
