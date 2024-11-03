@@ -9,4 +9,3 @@ flask
 psycopg2-binary
 SQLAlchemy
 python-dotenv
-database_module

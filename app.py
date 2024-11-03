@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 DATABASE_URL = os.getenv('DATABASE_URL')
 
-from database_module import init_db
+from test_sql import init_db
 init_db()
 
 app = Flask(__name__)
