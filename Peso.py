@@ -13,7 +13,7 @@ def forecast_peso():
     # Download PHP/USD data from Yahoo Finance (extended historical data)
     data = yf.download('PHPUSD=X', start='2020-01-01', end='2024-09-01', interval='1mo')
     data = data['Close'].dropna()
-    data = data['Close']*15500  # Use only the 'Close' column and drop any NaN values
+    data = data*15500  # Use only the 'Close' column and drop any NaN values
 
     # Define the range of parameters for p, d, q
     p_values = range(0, 3)
@@ -55,7 +55,7 @@ def forecast_peso():
 
     # Prepare response data
     forecast_dates = pd.date_range(start=data.index[-1] + pd.DateOffset(months=1), periods=12, freq='MS')
-    forecast_df = pd.DataFrame(forecast.values, index=forecast_dates, columns=['Forecasted PHP/USD'])
+    forecast_df = pd.DataFrame(forecast.values, index=forecast_dates, columns=['Forecasted PHP/IDR'])
     response_data = forecast_df.reset_index().rename(columns={'index': 'Date'}).to_dict(orient='records')
 
     return jsonify({
