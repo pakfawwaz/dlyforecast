@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 from test_api import forecast
 from Peso import forecast_peso
 from Yen import forecast_yen  # Import the forecast function
+from usd import forecast_usd
 import os
 from gpt_api import get_recom, pol_jp, ek_jp, gen_jp, pol_ph, ek_ph, gen_ph
 
@@ -32,6 +33,12 @@ def forecast_ph():
 def forecast_jp():
     # Call the forecast function and return its response as JSON
     result = forecast_yen()
+    return result
+
+@app.route('/forecast_us', methods=['GET'])
+def forecast_us():
+    # Call the forecast function and return its response as JSON
+    result = forecast_usd()
     return result
 
 # Route to get all entries in the example table
