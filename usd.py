@@ -55,7 +55,7 @@ def forecast_usd():
 
     # Prepare response data
     forecast_dates = pd.date_range(start=data.index[-1] + pd.DateOffset(months=1), periods=12, freq='MS')
-    forecast_df = pd.DataFrame(forecast.values, index=forecast_dates, columns=['Forecasted PHP/IDR'])
+    forecast_df = pd.DataFrame(forecast.values, index=forecast_dates, columns=['Forecasted USD/IDR'])
     response_data = forecast_df.reset_index().rename(columns={'index': 'Date'}).to_dict(orient='records')
 
     return jsonify({
