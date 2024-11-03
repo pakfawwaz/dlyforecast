@@ -54,32 +54,32 @@ def add_data():
     return jsonify({"id": item.id, "name": item.name, "value": item.value}), 201
 
 @app.route('/politik_ph', methods=['GET'])
-def get_advice():
+def get_ph_pol():
     result = pol_ph()
     return result
 
 @app.route('/ekonomi_ph', methods=['GET'])
-def get_advice():
+def get_ph_ekon():
     result = ek_ph()
     return result
 
 @app.route('/general_ph', methods=['GET'])
-def get_advice():
+def get_ph_general():
     result = gen_ph()
     return result
 
 @app.route('/politik_jp', methods=['GET'])
-def get_advice():
+def get_jp_pol():
     result = pol_jp()
     return result
 
 @app.route('/ekonomi_jp', methods=['GET'])
-def get_advice():
+def get_jp_ekon():
     result = ek_jp()
     return result
 
 @app.route('/general_jp', methods=['GET'])
-def get_advice():
+def get_jp_general():
     result = gen_jp()
     return result
 
