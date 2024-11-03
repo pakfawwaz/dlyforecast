@@ -1,5 +1,6 @@
 import openai
 import os
+from flask import jsonify
 
 def get_recom():
     Country='Philippines'
