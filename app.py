@@ -3,7 +3,7 @@ from test_api import forecast
 from Peso import forecast_peso
 from Yen import forecast_yen  # Import the forecast function
 import os
-from gpt_api import get_recom
+from gpt_api import get_recom, pol_jp, ek_jp, gen_jp, pol_ph, ek_ph, gen_ph
 
 from test_sql import get_db, ExampleTable
 
@@ -53,9 +53,34 @@ def add_data():
     db.refresh(item)
     return jsonify({"id": item.id, "name": item.name, "value": item.value}), 201
 
-@app.route('/llm', methods=['GET'])
+@app.route('/politik_ph', methods=['GET'])
 def get_advice():
-    result = get_recom()
+    result = pol_ph()
+    return result
+
+@app.route('/ekonomi_ph', methods=['GET'])
+def get_advice():
+    result = ek_ph()
+    return result
+
+@app.route('/general_ph', methods=['GET'])
+def get_advice():
+    result = gen_ph()
+    return result
+
+@app.route('/politik_jp', methods=['GET'])
+def get_advice():
+    result = pol_jp()
+    return result
+
+@app.route('/ekonomi_jp', methods=['GET'])
+def get_advice():
+    result = ek_jp()
+    return result
+
+@app.route('/general_jp', methods=['GET'])
+def get_advice():
+    result = gen_jp()
     return result
 
 
