@@ -22,7 +22,7 @@ Base = declarative_base()
 
 # Example table (model)
 class ExampleTable(Base):
-    _tablename_ = 'example_table'
+    __tablename__ = 'example_table'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     value = Column(Integer)
