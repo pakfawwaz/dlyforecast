@@ -4,6 +4,8 @@ from Peso import forecast_peso
 from Yen import forecast_yen  # Import the forecast function
 import os
 
+from test_sql import get_db, ExampleTable
+
 from dotenv import load_dotenv
 load_dotenv()
 DATABASE_URL = os.getenv('DATABASE_URL')
