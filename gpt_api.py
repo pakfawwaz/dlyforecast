@@ -2,6 +2,20 @@ import openai
 import os
 
 def get_recom():
+    Country='Philippines'
+    Curr_Type='Peso'
+    Curr_Forecast_YoY='+4.5%'
+    Curr_Forecast_MoM='-1.2%'
+    Pol_1='Riot on Capital City over Election Result'
+    Pol_1_Sentiment='Negative'
+    Pol_2='Conflict between VP and President'
+    Pol_2_Sentiment='Negative'
+    Pol_3='Tropical Storm Trami devastates seven million in the Philippines'
+    Pol_3_Sentiment='Negative'
+    CBI='6.5%'
+    VAT='12%'
+    Tariff= '0%'
+    Commodity='Coal'
     openai.api_key = os.getenv('OPEN_API_KEY')
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
