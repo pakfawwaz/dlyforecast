@@ -3,6 +3,7 @@ from test_api import forecast
 from Peso import forecast_peso
 from Yen import forecast_yen  # Import the forecast function
 import os
+from gpt_api import get_recom
 
 from test_sql import get_db, ExampleTable
 
@@ -51,6 +52,12 @@ def add_data():
     db.commit()
     db.refresh(item)
     return jsonify({"id": item.id, "name": item.name, "value": item.value}), 201
+
+@app.route('/llm', methods=['GET'])
+def get_advice():
+    result = get_recom()
+    return result
+
 
 if __name__ == '__main__':
     port =int(os.environ.get('PORT', 5000))
