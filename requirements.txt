@@ -6,4 +6,6 @@ scikit-learn
 matplotlib
 jsonify
 flask
-
+psycopg2-binary
+SQLAlchemy
+python-dotenv

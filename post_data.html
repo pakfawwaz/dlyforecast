@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST Data</title>
+</head>
+<body>
+    <h2>Send POST Data</h2>
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="number" id="value" placeholder="Enter value">
+    <button onclick="postData()">Send POST Request</button>
+
+    <script>
+        function postData() {
+            const name = document.getElementById('name').value;
+            const value = document.getElementById('value').value;
+
+            fetch('https://your-app-name.herokuapp.com/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: name, value: parseInt(value) })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
